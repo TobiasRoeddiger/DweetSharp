@@ -1,5 +1,5 @@
 # DweetSharp
-This is a C# open-source library to interact with the [dweet.io](https://dweet.io) REST API.
+This is a C# open-source library to interact with the [dweet.io](https://dweet.io) REST API. dweet.io gives you ridiculously simple messaging and alerts for the Internet of Things.
 
 ## Supported Functionality
 * ✅ Lock
