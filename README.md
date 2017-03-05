@@ -9,10 +9,10 @@ This is a C# open-source library to interact with the dweet.io REST API.
 * DweetQuietlyFor ✅
 * GetLatestDweetFor ✅
 
-* GetDweetsFor ❌
-* ListenForDweetsFrom ❌
-* GetStoredDweetsFor ❌
-* GetStoredAlertsFor ❌
-* Alert ❌
-* GetAlertFor ❌
-* RemoveAlertFor ❌
+* ❌ GetDweetsFor
+* ❌ ListenForDweetsFrom
+* ❌ GetStoredDweetsFor
+* ❌ GetStoredAlertsFor
+* ❌ Alert
+* ❌ GetAlertFor
+* ❌ RemoveAlertFor
