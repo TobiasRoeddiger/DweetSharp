@@ -13,19 +13,19 @@ namespace DweetSharpTests
         [Test]
         public async Task FailLock()
         {
-            Assert.False(await Dweet.Lock("someRandomThingJustForDweetSharp", "dweetLock", "masterKey"));
+            Assert.False(await DweetIO.Lock("someRandomThingJustForDweetSharp", "dweetLock", "masterKey"));
         }
 
         [Test]
         public async Task FailUnlock()
         {
-            Assert.False(await Dweet.Unlock("someRandomThingJustForDweetSharp", "masterKey"));
+            Assert.False(await DweetIO.Unlock("someRandomThingJustForDweetSharp", "masterKey"));
         }
 
         [Test]
         public async Task FailRemoveLock()
         {
-            Assert.False(await Dweet.RemoveLock("dweetLock", "masterKey"));
+            Assert.False(await DweetIO.RemoveLock("dweetLock", "masterKey"));
         }
     }
 
@@ -36,21 +36,21 @@ namespace DweetSharpTests
         public async Task DweetForWithoutKey()
         {
             Thread.Sleep(1000); //make sure API is only called once every second for the same thing
-            Assert.True(await Dweet.DweetFor("someRandomThingJustForDweetSharp", "{\"test\":123456789}"));
+            Assert.True(await DweetIO.DweetFor("someRandomThingJustForDweetSharp", "{\"test\":123456789}"));
         }
 
         [Test]
         public async Task DweetQuietlyForWithoutKey()
         {
             Thread.Sleep(1000); //make sure API is only called once every second for the same thing
-            Assert.True(await Dweet.DweetQuietlyFor("someRandomThingJustForDweetSharp", "{\"test\":123456789}"));
+            Assert.True(await DweetIO.DweetQuietlyFor("someRandomThingJustForDweetSharp", "{\"test\":123456789}"));
         }
 
         [Test]
         public async Task GetLatestDweetForWithoutKey()
         {
             Thread.Sleep(1000); //make sure API is only called once every second for the same thing
-            Assert.True((await Dweet.GetLatestDweetFor("someRandomThingJustForDweetSharp")).StartsWith("{\"this\":\"succeeded\","));
+            Assert.True((await DweetIO.GetLatestDweetFor("someRandomThingJustForDweetSharp")).StartsWith("{\"this\":\"succeeded\","));
         }
     }
 }

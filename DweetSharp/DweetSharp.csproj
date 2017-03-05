@@ -30,7 +30,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DweetSharpHttpClient.cs" />
-    <Compile Include="Dweet.cs" />
+    <Compile Include="DweetIO.cs" />
     <Compile Include="Exceptions\GETRequestFailedException.cs" />
   </ItemGroup>
   <ItemGroup>

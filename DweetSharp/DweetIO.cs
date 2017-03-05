@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DweetSharp
 {
-    public static class Dweet
+    public static class DweetIO
     {
         private static DweetSharpHttpClient _dweetIOClient = new DweetSharpHttpClient();
 
