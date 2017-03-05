@@ -55,15 +55,7 @@ namespace DweetSharp
 
         public static async Task<string> GetLatestDweetFor(string thing, string key = null)
         {
-            string uri;
-
-            if (key == null)
-            {
-                uri = string.Format("https://dweet.io/get/latest/dweet/for/{0}", thing);
-            }
-            else {
-                uri = string.Format("https://dweet.io/get/latest/dweet/for/{0}?key={1}", thing, key);
-            }
+            string uri = string.Format("https://dweet.io/get/latest/dweet/for/{0}", thing) + ((key == null) ? "?key=" + key : null);
             return await _dweetIOClient.GETWithContentReturned(uri);
         }
 
