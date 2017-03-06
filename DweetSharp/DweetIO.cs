@@ -44,7 +44,7 @@ namespace DweetSharp
             if (string.IsNullOrEmpty(JSONcontent)) { throw new ArgumentException("JSONcontent can't be null or empty"); }
             if (key != null && key == string.Empty) { throw new ArgumentException("key can't be an empty string"); }
 
-            string uri = string.Format("https://dweet.io/dweet/for/{0}", thing) + ((key == null) ? "?key=" + key : null);
+            string uri = string.Format("https://dweet.io/dweet/for/{0}", thing) + ((key != null) ? "?key=" + key : null);
             return await _dweetIOClient.POSTWithDidSucceedReturned(uri, JSONcontent);
         }
 
@@ -54,7 +54,7 @@ namespace DweetSharp
             if (string.IsNullOrEmpty(JSONcontent)) { throw new ArgumentException("JSONcontent can't be null or empty"); }
             if (key != null && key == string.Empty) { throw new ArgumentException("key can't be an empty string"); }
 
-            string uri = string.Format("https://dweet.io/dweet/quietly/for/{0}", thing) + ((key == null) ? "?key=" + key : null);
+            string uri = string.Format("https://dweet.io/dweet/quietly/for/{0}", thing) + ((key != null) ? "?key=" + key : null);
             return await _dweetIOClient.POSTWithDidSucceedReturned(uri, JSONcontent);
         }
 
@@ -63,13 +63,17 @@ namespace DweetSharp
             if (string.IsNullOrEmpty(thing)) { throw new ArgumentException("thing can't be null or empty"); }
             if (key != null && key == string.Empty) { throw new ArgumentException("key can't be an empty string"); }
 
-            string uri = string.Format("https://dweet.io/get/latest/dweet/for/{0}", thing) + ((key == null) ? "?key=" + key : null);
+            string uri = string.Format("https://dweet.io/get/latest/dweet/for/{0}", thing) + ((key != null) ? "?key=" + key : null);
             return await _dweetIOClient.GETWithContentReturned(uri);
         }
 
         public static async Task<string> GetDweetsFor(string thing, string key = null)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(thing)) { throw new ArgumentException("thing can't be null or empty"); }
+            if (key != null && key == string.Empty) { throw new ArgumentException("key can't be an empty string"); }
+
+            string uri = string.Format("https://dweet.io/get/latest/dweets/for/{0}", thing) + ((key != null) ? "?key=" + key : null);
+            return await _dweetIOClient.GETWithContentReturned(uri);
         }
 
         public static async Task<bool> ListenForDweetsFrom(string thing, string key = null)
@@ -91,7 +95,13 @@ namespace DweetSharp
         ///ALERTS
         public static async Task<bool> Alert(string who, string thing, string condition, string key)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(who)) { throw new ArgumentException("who can't be null or empty"); }
+            if (string.IsNullOrEmpty(thing)) { throw new ArgumentException("thing can't be null or empty"); }
+            if (string.IsNullOrEmpty(condition)) { throw new ArgumentException("condition can't be null or empty"); }
+            if (string.IsNullOrEmpty(key)) { throw new ArgumentException("key can't be null or empty"); }
+
+            string uri = string.Format("https://dweet.io/alert/{0}/when/{1}/{2}?key={3}", who, thing, condition, key);
+            return await _dweetIOClient.GETWithDidSucceedReturned(uri);
         }
 
         public static async Task<string> GetAlertFor(string thing, string key)

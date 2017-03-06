@@ -8,10 +8,10 @@ This is a C# open-source library to interact with the [dweet.io](https://dweet.i
 * ✅ DweetFor
 * ✅ DweetQuietlyFor
 * ✅ GetLatestDweetFor
-* ❌ GetDweetsFor
+* ✅ GetDweetsFor
 * ❌ ListenForDweetsFrom
 * ❌ GetStoredDweetsFor
 * ❌ GetStoredAlertsFor
-* ❌ Alert
+* ✅ Alert
 * ❌ GetAlertFor
 * ❌ RemoveAlertFor
