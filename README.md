@@ -4,7 +4,11 @@ This is a C# open-source library to interact with the [dweet.io](https://dweet.i
 ## How to use it?
 Using DweetSharp is as easy as pie.
 ```csharp
-DweetIO.DweetFor("NameOfSomeThing", "{\"someJson\": \"someValue\"}");
+DweetIO.DweetFor("NameOfSomeThing", "some JSON string");
+
+//if you are using Json.NET your code could look like this
+DweetIO.DweetFor("NameOfSomeThing", JsonConvert.SerializeObject(someIoTMeasurementObject));
+
 ```
 
 ## Supported Functionality
