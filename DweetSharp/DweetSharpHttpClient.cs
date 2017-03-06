@@ -30,10 +30,8 @@ namespace DweetSharp
         public async Task<bool> GETWithDidSucceedReturned(string uri)
         {
             var response = await _httpClient.GetAsync(uri);
-            var responseContent = await response.Content.ReadAsStringAsync();
 
-            //weird behaviour of dweet.io where on failure a 200 status code is returned, therefore have to check if JSON matches failure JSON.
-            return response.IsSuccessStatusCode && !responseContent.StartsWith("{\"this\":\"failed\""));
+            return await ValidateResponse(response);
         }
 
         public async Task<bool> POSTWithDidSucceedReturned(string uri, string json)
@@ -41,6 +39,11 @@ namespace DweetSharp
             var stringContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync(uri, stringContent);
 
+            return await ValidateResponse(response);
+        }
+
+        private async Task<bool> ValidateResponse(HttpResponseMessage response)
+        {
             var responseContent = await response.Content.ReadAsStringAsync();
 
             //weird behaviour of dweet.io where on failure a 200 status code is returned, therefore have to check if JSON matches failure JSON.
