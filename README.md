@@ -14,4 +14,4 @@ This is a C# open-source library to interact with the [dweet.io](https://dweet.i
 * ❌ GetStoredAlertsFor
 * ✅ Alert
 * ❌ GetAlertFor
-* ❌ RemoveAlertFor
+* ✅ RemoveAlertFor
