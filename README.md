@@ -2,7 +2,7 @@
 This is a C# open-source library to interact with the [dweet.io](https://dweet.io) REST API. It gives you ridiculously simple messaging and alerts for the Internet of Things.
 
 ## How to use it?
-Using DweetSharp is as easy as 🍰. 
+Using DweetSharp is as easy as 🍰. For a detailed documentation of the dweet.io API please have a look at [this](https://dweet.io/play/).
 
 #### Sending a Dweet
 ```csharp
@@ -11,7 +11,12 @@ string serializedObject = JsonConvert.SerializeObject(someIoTMeasurementObject);
 
 DweetIO.DweetFor("NameOfSomeThing", serializedObject);
 ```
-For a detailed documentation of the dweet.io API please have a look at [this](https://dweet.io/play/).
+
+#### Getting a Dweet
+```csharp
+string latestDweet = await DweetIO.GetLatestDweetFor("NameOfSomeThing");
+```
+
 
 ## Supported Functionality
 * ✅ Lock
