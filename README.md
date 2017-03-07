@@ -4,7 +4,7 @@ This is a C# open-source library to interact with the [dweet.io](https://dweet.i
 ## How to use it?
 Using DweetSharp is as easy as 🍰. 
 
-### Sending a Dweet
+#### Sending a Dweet
 ```csharp
 //using Json.NET for serialization
 string serializedObject = JsonConvert.SerializeObject(someIoTMeasurementObject);
