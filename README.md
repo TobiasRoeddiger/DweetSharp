@@ -26,7 +26,7 @@ string latestDweet = await DweetIO.GetLatestDweetFor("NameOfSomeThing");
 * ✅ GetLatestDweetFor
 * ✅ GetDweetsFor
 * ❌ ListenForDweetsFrom
-* ❌ GetStoredDweetsFor
+* ✅ GetStoredDweetsFor
 * ❌ GetStoredAlertsFor
 * ✅ Alert
 * ✅ GetAlertFor
