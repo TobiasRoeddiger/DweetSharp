@@ -34,5 +34,6 @@ string latestDweet = await DweetIO.GetLatestDweetFor("NameOfSomeThing");
 
 ##Limitations
 * retrieving dweets returns a JSON which you will have to parse according to your needs
+* the librery is not fully tested yet
 
 
