@@ -106,7 +106,11 @@ namespace DweetSharp
 
         public static async Task<string> GetAlertFor(string thing, string key)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(thing)) { throw new ArgumentException("thing can't be null or empty"); }
+            if (string.IsNullOrEmpty(key)) { throw new ArgumentException("key can't be null or empty"); }
+
+            string uri = string.Format("https://dweet.io/get/alert/for/{0}?key={1}", thing, key);
+            return await _dweetIOClient.GETWithContentReturned(uri);
         }
 
         public static async Task<bool> RemoveAlertFor(string thing, string key)

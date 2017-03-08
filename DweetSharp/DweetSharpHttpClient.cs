@@ -24,7 +24,7 @@ namespace DweetSharp
             {
                 return responseContent;
             }
-            throw new GETRequestFailedException(response.StatusCode.ToString(), responseContent);
+            throw new RequestFailedException(response.StatusCode.ToString(), responseContent);
         }
 
         public async Task<bool> GETWithDidSucceedReturned(string uri)
