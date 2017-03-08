@@ -17,7 +17,6 @@ DweetIO.DweetFor("NameOfSomeThing", serializedObject);
 string latestDweet = await DweetIO.GetLatestDweetFor("NameOfSomeThing");
 ```
 
-
 ## Supported Functionality
 * ✅ Lock
 * ✅ Unlock
@@ -32,3 +31,8 @@ string latestDweet = await DweetIO.GetLatestDweetFor("NameOfSomeThing");
 * ✅ Alert
 * ❌ GetAlertFor
 * ✅ RemoveAlertFor
+
+##Limitations
+* retrieving dweets returns a JSON which you will have to parse according to your needs
+
+
