@@ -32,7 +32,7 @@ string latestDweet = await DweetIO.GetLatestDweetFor("NameOfSomeThing");
 * ✅ GetAlertFor
 * ✅ RemoveAlertFor
 
-##Limitations
+## Limitations
 * retrieving dweets returns a JSON which you will have to parse according to your needs
 * the library is not fully tested yet
 
